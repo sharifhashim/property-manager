@@ -4,5 +4,5 @@ CREATE TABLE buildings(
     name VARCHAR(255) NOT NULL,
     number VARCHAR(50) NOT NULL,
     city VARCHAR(50) NOT NULL,
-    user_id INTEGER REFERENCES users(id) ON DELETE CASCADE,
+    user_id INTEGER REFERENCES users(id) ON DELETE CASCADE
 );
