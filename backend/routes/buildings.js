@@ -1,9 +1,9 @@
 const express = require("express");
 const router = express.Router();
 
-module.exports = ({ getUsers }) => {
+module.exports = ({ getBuildings }) => {
   router.get("/", (req, res) => {
-    getUsers()
+    getBuildings()
       .then((users) => res.json(users))
       .catch((err) => res.json({ error: err.message }));
   });
