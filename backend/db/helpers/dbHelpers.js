@@ -38,6 +38,21 @@ module.exports = (db) => {
       .then((result) => result.rows)
       .catch((err) => err);
   };
-
-  return { getUsers, getBuildings, getUnits, getContracts };
+  const login = (email, password) => {
+    const query = {
+      text: `SELECT * FROM users WHERE email = $1;`,
+    };
+    const values = [email];
+    return db
+      .query(query, values)
+      .then((result) => result.rows[0])
+      .then((result) => {
+        if (result !== undefined && result.password === password) {
+          return result;
+        }
+        return null;
+      })
+      .catch((err) => err);
+  };
+  return { getUsers, getBuildings, getUnits, getContracts, login };
 };
