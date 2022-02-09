@@ -4,7 +4,7 @@ const router = express.Router();
 module.exports = ({ getBuildings }) => {
   router.get("/", (req, res) => {
     getBuildings()
-      .then((users) => res.json(users))
+      .then((buildings) => res.json(buildings))
       .catch((err) => res.json({ error: err.message }));
   });
 
