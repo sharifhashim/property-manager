@@ -19,8 +19,14 @@ app.use(cookieParser());
 app.use(express.static(path.join(__dirname, "public")));
 
 app.use("/api/users", usersRouter(dbHelpers));
-app.use("/api/buildings", buildingsRouter(dbHelpers));
-app.use("/api/units", unitsRouter(dbHelpers));
-app.use("/api/contracts", contractsRouter(dbHelpers));
+app.use("/api/users/:user_id/buildings", buildingsRouter(dbHelpers));
+app.use(
+  "/api/users/:user_id/buildings/:building_id/units",
+  unitsRouter(dbHelpers)
+);
+app.use(
+  "/api/users/:user_id/buildings/:building_id/units/:unit_id/contracts",
+  contractsRouter(dbHelpers)
+);
 
 module.exports = app;
