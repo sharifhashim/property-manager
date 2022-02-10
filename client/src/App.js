@@ -1,10 +1,10 @@
 import "./App.css";
-import BuildingsTable from "./components/BuildingsTable";
+import UnitsTable from "./components/UnitsTable";
 
 function App() {
   return (
     <div className="App">
-      <BuildingsTable />
+      <UnitsTable />
     </div>
   );
 }
