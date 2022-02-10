@@ -17,8 +17,9 @@ export default function UnitsTable() {
           <TableRow>
             <TableCell>Building Name</TableCell>
             <TableCell>Unit #</TableCell>
-            <TableCell align="right">Owner</TableCell>
-            <TableCell align="right">City</TableCell>
+            <TableCell align="left">Owner</TableCell>
+            <TableCell align="left">Status</TableCell>
+            <TableCell align="left">City</TableCell>
           </TableRow>
         </TableHead>
         <TableBody>
@@ -31,8 +32,9 @@ export default function UnitsTable() {
                 {row.building_name}
               </TableCell>
               <TableCell>{row.unit_number}</TableCell>
-              <TableCell align="right">{row.owner}</TableCell>
-              <TableCell align="right">{row.city}</TableCell>
+              <TableCell align="left">{row.owner}</TableCell>
+              <TableCell align="left">{row.status}</TableCell>
+              <TableCell align="left">{row.city}</TableCell>
             </TableRow>
           ))}
         </TableBody>
