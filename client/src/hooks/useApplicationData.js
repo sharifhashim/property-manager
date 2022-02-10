@@ -6,7 +6,7 @@ export default function useApplicationData() {
 
   useEffect(() => {
     axios
-      .get("/api/users/1/buildings")
+      .get("/api/users/1/units")
       .then((buildings) => {
         setState(...state, buildings.data);
       })
