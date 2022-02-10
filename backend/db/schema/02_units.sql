@@ -5,7 +5,7 @@ CREATE TABLE units(
     building_name varchar(255) NOT NULL,
     unit_number INTEGER NOT NULL,
     number_of_bedrooms INTEGER NOT NULL,
-    number_of_washrooms INTEGER NOT NULL,
+    number_of_washrooms DECIMAL NOT NULL,
     size VARCHAR (50) NOT NULL,
     description VARCHAR(255) NOT NULL,
     parking_spot_number VARCHAR(50) NOT NULL,
