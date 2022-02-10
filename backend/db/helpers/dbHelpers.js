@@ -9,16 +9,6 @@ module.exports = (db) => {
       .catch((err) => err);
   };
 
-  const getBuildings = () => {
-    const query = {
-      text: "SELECT * FROM buildings;",
-    };
-    return db
-      .query(query)
-      .then((result) => result.rows)
-      .catch((err) => err);
-  };
-
   const getUnits = () => {
     const query = {
       text: "SELECT * FROM units;",
@@ -54,5 +44,5 @@ module.exports = (db) => {
       })
       .catch((err) => err);
   };
-  return { getUsers, getBuildings, getUnits, getContracts, login };
+  return { getUsers, getUnits, getContracts, login };
 };

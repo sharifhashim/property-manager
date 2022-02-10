@@ -7,7 +7,7 @@ const dbHelpers = require("./db/helpers/dbHelpers")(db);
 const cors = require("cors");
 
 const usersRouter = require("./routes/users");
-const buildingsRouter = require("./routes/buildings");
+//const buildingsRouter = require("./routes/buildings");
 const unitsRouter = require("./routes/units");
 const contractsRouter = require("./routes/contracts");
 
@@ -21,13 +21,10 @@ app.use(express.static(path.join(__dirname, "public")));
 app.use(cors({ origin: "http://localhost:3000", credentials: true }));
 
 app.use("/api/users", usersRouter(dbHelpers));
-app.use("/api/users/:user_id/buildings", buildingsRouter(dbHelpers));
+//app.use("/api/users/:user_id/buildings", buildingsRouter(dbHelpers));
+app.use("/api/users/:user_id/units", unitsRouter(dbHelpers));
 app.use(
-  "/api/users/:user_id/buildings/:building_id/units",
-  unitsRouter(dbHelpers)
-);
-app.use(
-  "/api/users/:user_id/buildings/:building_id/units/:unit_id/contracts",
+  "/api/users/:user_id/units/:unit_id/contracts",
   contractsRouter(dbHelpers)
 );
 
